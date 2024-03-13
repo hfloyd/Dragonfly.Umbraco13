@@ -1,78 +1,116 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <TargetFramework>net5</TargetFramework>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <Copyright>Heather Floyd [www.HeatherFloyd.com]</Copyright>
-    <RepositoryType>GIT</RepositoryType>
-    <Authors>HFloyd</Authors>
-    <Company>Heather Floyd</Company>
-    <Product>Dragonfly Umbraco 9</Product>
-    <Description>A collection of Umbraco 9+ Helpers &amp; Models (min. Umbraco 9.3.0)</Description>
-    <PackageProjectUrl>https://dragonflylibraries.com/umbraco-packages/umbraco-helpers/</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/hfloyd/Dragonfly.Umbraco9</RepositoryUrl>
-    <PackageId>Dragonfly.Umbraco9</PackageId>
-    <AssemblyName>Dragonfly.Umbraco9</AssemblyName>
-    <RootNamespace>Dragonfly</RootNamespace>
-    <Version>1.7.0</Version>
-    <AssemblyVersion>$(Version)</AssemblyVersion>
-    <FileVersion>$(Version)</FileVersion>
-    <PackageReleaseNotes>Updates</PackageReleaseNotes>
-    <PackageReadmeFile>README.md</PackageReadmeFile>
-    <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
-    <PackageTags>Umbraco-9; Umbraco-10; umbraco-marketplace</PackageTags>
-    <Nullable>enable</Nullable>
-    <PackageIcon>Dragonfly-UmbracoHelpers-128.png</PackageIcon>
-    <GenerateDocumentationFile>True</GenerateDocumentationFile>
-    <Title>Dragonfly Umbraco Helpers</Title>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile></DocumentationFile>
-    <DebugType>portable</DebugType>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DebugType>portable</DebugType>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+	</PropertyGroup>
+
+	<!-- Package Description-->
+	<PropertyGroup>
+		<PackageId>Dragonfly.Umbraco13</PackageId>
+		<Title>Dragonfly Umbraco 13 Helpers</Title>
+		<Product>Dragonfly Umbraco Helpers</Product>
+		<Description>A collection of Umbraco 13+ Helpers &amp; Models (min. Umbraco 13.0.0)</Description>
+
+		<PackageProjectUrl>https://dragonflylibraries.com/umbraco-packages/umbraco-helpers/</PackageProjectUrl>
+		<RepositoryType>GIT</RepositoryType>
+		<RepositoryUrl>https://github.com/hfloyd/Dragonfly.Umbraco13</RepositoryUrl>
+
+		<PackageIcon>Dragonfly-UmbracoHelpers-128.png</PackageIcon>
+		<PackageTags>UUmbraco;umbraco-marketplace;Umbraco-13;</PackageTags>
+		<PackageReleaseNotes>First release</PackageReleaseNotes>
+	</PropertyGroup>
+
+	<!-- Author Info + Legal-->
+	<PropertyGroup>
+		<Authors>HFloyd</Authors>
+		<Company>Heather Floyd</Company>
+		<Copyright>Heather Floyd [www.HeatherFloyd.com]</Copyright>
+
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+		<PackageLicenseFile>LICENSE.md</PackageLicenseFile>
+	</PropertyGroup>
+
+	<!-- Assembly Info-->
+	<PropertyGroup>
+		<RootNamespace>Dragonfly</RootNamespace>
+		<AssemblyName>Dragonfly.Umbraco13</AssemblyName>
+		<Version>1.0.1</Version>
+		<AssemblyVersion>$(Version)</AssemblyVersion>
+		<FileVersion>$(Version)</FileVersion>
+		<IncludeSymbols>True</IncludeSymbols>
+		<SymbolPackageFormat>symbols.nupkg</SymbolPackageFormat>
+		<Nullable>enable</Nullable>
+		<GenerateDocumentationFile>True</GenerateDocumentationFile>
+	</PropertyGroup>
+
+	<!-- Include Package Items -->
 	<ItemGroup>
 		<None Include="..\..\Dragonfly-UmbracoHelpers-128.png">
-		  <Pack>True</Pack>
-		  <PackagePath>\</PackagePath>
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
 		</None>
-		<None Include="..\..\LICENSE.md" Pack="true" PackagePath="" />
+		<None Include="..\..\LICENSE.md">
+			<Pack>True</Pack>
+			<PackagePath></PackagePath>
+		</None>
 		<None Include="..\..\README.md">
-		  <Pack>True</Pack>
-		  <PackagePath>\</PackagePath>
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
 		</None>
 	</ItemGroup>
-  <ItemGroup>
-    <Compile Remove="UmbracoModels\DataTypes\**" />
-    <Compile Remove="UmbracoModels\MvcFakes\**" />
-    <EmbeddedResource Remove="UmbracoModels\DataTypes\**" />
-    <EmbeddedResource Remove="UmbracoModels\MvcFakes\**" />
-    <None Remove="UmbracoModels\DataTypes\**" />
-    <None Remove="UmbracoModels\MvcFakes\**" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Remove="UmbracoHelpers\ApiControllerHtmlHelper.cs" />
-    <Compile Remove="UmbracoHelpers\Email.cs" />
-    <Compile Remove="UmbracoHelpers\IContentExtensions.cs" />
-    <Compile Remove="UmbracoModels\‌Links\Link.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="Dragonfly.Net5" Version="1.5.0" />
-    <PackageReference Include="Umbraco.Cms.Core" Version="9.3.0" PrivateAssetOnly="true" />
-    <PackageReference Include="Umbraco.Cms.Web.Common" Version="9.3.0" PrivateAssetOnly="true" />
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Configuration" />
-    <Reference Include="System.Web" />
-    <Reference Include="System.Web.Extensions" />
-  </ItemGroup>
 
-  <Import Project="..\Custom.targets" />
+	<!-- Packages-->
+	<ItemGroup>
+		<PackageReference Include="Dragonfly.Net8" Version="1.0.0" />
+		<PackageReference Include="Umbraco.Cms.Core" Version="[13.0.0,14.0.0]" />
+		<PackageReference Include="Umbraco.Cms.Web.Common" Version="[13.0.0,14.0.0]" PrivateAssets="All" />
+	</ItemGroup>
 
-  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="REM XCOPY /y &quot;$(TargetDir)$(TargetName)*.*&quot; &quot;C:\Users\XX\&quot;" />
-  </Target>
+	<!--Include App_Plugins & targets file-->
+	<!--
+	<ItemGroup>
+		<Content Include="App_Plugins\Dragonfly....\**\*.*">
+			<ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+			<CopyToPublishDirectory>Always</CopyToPublishDirectory>
+			<Pack>True</Pack>
+		</Content>
+		<None Include="build\**\*.*">
+			<Pack>True</Pack>
+			<PackagePath>buildTransitive</PackagePath>
+		</None>
+	</ItemGroup>
+	-->
+
+	<!-- Included/Excluded Files -->
+	<ItemGroup>
+		<Compile Remove="UmbracoModels\DataTypes\**" />
+		<Compile Remove="UmbracoModels\MvcFakes\**" />
+		<Compile Remove="UmbracoHelpers\ApiControllerHtmlHelper.cs" />
+		<Compile Remove="UmbracoHelpers\Email.cs" />
+		<Compile Remove="UmbracoHelpers\IContentExtensions.cs" />
+		<Compile Remove="UmbracoModels\‌Links\Link.cs" />
+
+		<EmbeddedResource Remove="UmbracoModels\DataTypes\**" />
+		<EmbeddedResource Remove="UmbracoModels\MvcFakes\**" />
+		<None Remove="UmbracoModels\DataTypes\**" />
+		<None Remove="UmbracoModels\MvcFakes\**" />
+	</ItemGroup>
+
+
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<DocumentationFile></DocumentationFile>
+		<DebugType>portable</DebugType>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<DebugType>portable</DebugType>
+	</PropertyGroup>
+
+
+	<Import Project="..\Custom.targets" />
+
+	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
+		<Exec Command="REM XCOPY /s /y &quot;$(TargetDir)$(TargetName)*.*&quot; &quot;C:\Users\XX\&quot;" />
+	</Target>
 </Project>

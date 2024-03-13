@@ -7,8 +7,7 @@
     using System.Threading.Tasks;
     using Umbraco.Cms.Core;
     using Umbraco.Cms.Core.Models.PublishedContent;
-    using Umbraco.Core;
-
+ 
     public static class UdiHelpers
     {
         public static IEnumerable<Udi> ToUdis(this IEnumerable<string> UdiStrings)

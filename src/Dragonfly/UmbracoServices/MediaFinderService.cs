@@ -9,8 +9,7 @@
     using Umbraco.Cms.Core;
     using Umbraco.Cms.Core.Models.PublishedContent;
     using Umbraco.Cms.Web.Common;
-    using Umbraco.Core;
-    using Umbraco.Extensions;
+ using Umbraco.Extensions;
 
 
     /// <summary>

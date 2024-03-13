@@ -1,7 +1,6 @@
 ﻿namespace Dragonfly.UmbracoHelpers
 {
     using System;
-    using System.Web;
     using Microsoft.AspNetCore.Http;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
