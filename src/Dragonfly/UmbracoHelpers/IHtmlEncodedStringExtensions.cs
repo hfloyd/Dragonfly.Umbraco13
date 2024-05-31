@@ -122,7 +122,24 @@
 		}
 		#endregion
 
-
+		/// <summary>Removes all &lt;p&gt; tags from HTML</summary>
+		/// <param name="OriginalHtml"></param>
+		/// <param name="ReplaceWithBr">optional - if there are multiple paragraphs, will put a &lt;br/&gt; tag between them</param>
+		/// <returns></returns>
+		public static HtmlString StripParagraphTags(this IHtmlEncodedString? OriginalHtml, bool ReplaceWithBr = true)
+		{
+			if (OriginalHtml != null)
+			{
+				string str = !string.IsNullOrEmpty(OriginalHtml.ToString())
+					? OriginalHtml.ToString().StripParagraphTags(ReplaceWithBr)
+					: "";
+				return new HtmlString(str);
+			}
+			else
+			{
+				return new HtmlString("");
+			}
+		}
 	}
 
 }

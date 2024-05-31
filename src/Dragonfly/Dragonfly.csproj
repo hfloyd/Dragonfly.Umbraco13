@@ -18,7 +18,7 @@
 
 		<PackageIcon>Dragonfly-UmbracoHelpers-128.png</PackageIcon>
 		<PackageTags>Umbraco;umbraco-marketplace;Umbraco-13;</PackageTags>
-		<PackageReleaseNotes>Updated to use 'Dragonfly.Net6' dependency</PackageReleaseNotes>
+
 	</PropertyGroup>
 
 	<!-- Author Info + Legal-->
@@ -36,13 +36,14 @@
 	<PropertyGroup>
 		<RootNamespace>Dragonfly</RootNamespace>
 		<AssemblyName>Dragonfly.Umbraco13</AssemblyName>
-		<Version>2.0.0</Version>
+		<Version>2.2.1</Version>
 		<AssemblyVersion>$(Version)</AssemblyVersion>
 		<FileVersion>$(Version)</FileVersion>
+		<PackageReleaseNotes>Fixing dependencies</PackageReleaseNotes>
+
 		<IncludeSymbols>True</IncludeSymbols>
 		<SymbolPackageFormat>symbols.nupkg</SymbolPackageFormat>
-	
-		<GenerateDocumentationFile>True</GenerateDocumentationFile>
+	<GenerateDocumentationFile>True</GenerateDocumentationFile>
 	</PropertyGroup>
 
 	<!-- Include Package Items -->
@@ -64,8 +65,8 @@
 	<!-- Packages-->
 	<ItemGroup>
 		<PackageReference Include="Dragonfly.Net6" Version="1.0.0" />
-		<PackageReference Include="Umbraco.Cms.Core" Version="[13.0.0,14.0.0]" />
-		<PackageReference Include="Umbraco.Cms.Web.Common" Version="[13.0.0,14.0.0]" PrivateAssets="All" />
+		<PackageReference Include="Umbraco.Cms.Core" Version="[10.0.0,13.999.999]" />
+		<PackageReference Include="Umbraco.Cms.Web.Common" Version="[10.0.0,13.999.999]" PrivateAssets="All" />
 	</ItemGroup>
 
 	<!--Include App_Plugins & targets file-->
